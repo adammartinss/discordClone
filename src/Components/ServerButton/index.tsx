@@ -1,32 +1,28 @@
 import React from 'react';
 
-import {Button} from './styles'
+import { Button } from './styles';
 
-
-export interface Props { 
+export interface Props {
     selected?: boolean;
     isHome?: boolean;
     hasNotifications?: boolean;
-    mentions?:  number;
+    mentions?: number;
 }
 
 const ServerButton: React.FC<Props> = ({
     selected,
     isHome,
     hasNotifications,
-    mentions
+    mentions,
 }) => {
-    return(
+    return (
         <Button
-        isHome={isHome}
-        hasNotifications={hasNotifications}
-        mentions={mentions}
-        className={selected ? 'active' : ''}
-        
-        >
-            {isHome && <img src={} alt="asd"/>}
-        </Button>
-    )
-}
+            isHome={isHome}
+            hasNotifications={hasNotifications}
+            mentions={mentions}
+            className={selected ? 'active' : ''}
+        ></Button>
+    );
+};
 
-export default ServerButton
+export default ServerButton;
