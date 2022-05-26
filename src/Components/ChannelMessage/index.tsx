@@ -1,30 +1,37 @@
 import React from 'react';
 
-import {Container} from './styles'
+import { Container, Messages, Avatar, Header, Content } from './styles';
+export { Mention } from './styles'
 
-export interface Props { 
+export interface Props {
     author: string;
     date: string;
     content: string | React.ReactElement | React.ReactNode;
     hasMention?: boolean;
-    isBot ?: boolean;
+    isBot?: boolean;
 }
 
-const ChannelMessage: React.FC<Props> = ({author, date, content, hasMention, isBot}) => {
-    return(
-        <Container>
-            <Avatar/>
-             <Message>
+const ChannelMessage = ({
+    author,
+    date,
+    content,
+    hasMention,
+    isBot,
+}: Props) => {
+    return (
+        <Container className ={hasMention ?'mention' : ''}>
+            <Avatar className={isBot ? 'bot' : ''} />
+            <Messages>
                 <Header>
-                    <strong>Adam Martins</strong>
+                    <strong>{author}</strong>
 
-                    {isBot && <span>Bot<span/>}
+                    {isBot && <span>Bot</span>}
 
-                    <time>24/02/2022</time> 
+                    <time>{date}</time>
                 </Header>
-                <Content>Meu aniversário</Content>
-             </Message>
+                <Content>{content}</Content>
+            </Messages>
         </Container>
-        )
-}
+    );
+};
 export default ChannelMessage;

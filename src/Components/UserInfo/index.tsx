@@ -11,7 +11,7 @@ import {
   SettingsIcon,
 } from './styles';
 
-const UserInfo: React.FC = () => {
+const UserInfo = () => {
   return (
     <Container>
       <Profile>

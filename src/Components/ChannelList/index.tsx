@@ -5,7 +5,7 @@ import { Container, Category, AddCategoryIcon } from './styles';
 
 import Servername from '../ServerList';
 
-const ChannelList: React.FC = () => {
+const ChannelList = () => {
     return (
         <Container>
             <Category>

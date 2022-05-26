@@ -10,10 +10,10 @@ export interface Props{
 }
 
 
-const ChannelButton: React.FC<Props> = ({
+const ChannelButton = ({
     channelName,
     selected
-}) => {
+}:Props) => {
     return(
         <Container className= {selected ? 'active' : ''}>
             <div>
